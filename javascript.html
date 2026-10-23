@@ -1,11 +1,11 @@
 //func randomly returns one of string values: "rock", "paper" or "scissors"
 function getComputerChoice () {
-    const compChoose = Math.random();
+    const compChoice = Math.random();
 
-    if (compChoose <= 0.33) {
+    if (compChoice <= 0.33) {
         console.log("rock");
         return "rock";
-    } else if (compChoose <= 0.66) {
+    } else if (compChoice <= 0.66) {
         console.log("paper");
         return "paper";
     } else {
@@ -16,9 +16,21 @@ function getComputerChoice () {
 
 getComputerChoice();
 
-//prompt user to choose one of: "rock", "paper", "scissors"
 function getHumanChoice() {
-    
+    //prompt user to choose one of: "rock", "paper", "scissors"
+    let myChoice = prompt("Choose: rock, paper or scissors");
+
+    //store and return user's choice
+    if(myChoice === "rock") {
+        console.log("rock");
+        return "rock";
+    } else if (myChoice === "paper") {
+        console.log("paper");
+        return "paper";
+    } else {
+        console.log("scissors");
+        return "scissors";
+    }
 }
-//store user's choice 
-//output user's choice
+ 
+getHumanChoice();
