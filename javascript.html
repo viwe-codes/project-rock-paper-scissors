@@ -1,0 +1,24 @@
+//func randomly returns one of string values: "rock", "paper" or "scissors"
+function getComputerChoice () {
+    const compChoose = Math.random();
+
+    if (compChoose <= 0.33) {
+        console.log("rock");
+        return "rock";
+    } else if (compChoose <= 0.66) {
+        console.log("paper");
+        return "paper";
+    } else {
+        console.log("scissors");
+        return "scissors";
+    }
+}
+
+getComputerChoice();
+
+//prompt user to choose one of: "rock", "paper", "scissors"
+function getHumanChoice() {
+    
+}
+//store user's choice 
+//output user's choice
