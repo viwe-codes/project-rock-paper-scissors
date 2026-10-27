@@ -18,13 +18,14 @@ function getComputerChoice () {
 
 function getHumanChoice() {
     //prompts user to choose one of: "rock", "paper", "scissors"
-    let myChoice = prompt.toLowerCase("Choose: rock, paper or scissors");
+    let myChoice = prompt("Choose: rock, paper or scissors");
+    let myChoice2 = myChoice.toLowerCase();
 
     //store and return user's choice
-    if(myChoice === "rock") {
+    if(myChoice2 === "rock") {
         console.log("rock");
         return "rock";
-    } else if (myChoice === "paper") {
+    } else if (myChoice2 === "paper") {
         console.log("paper");
         return "paper";
     } else {
