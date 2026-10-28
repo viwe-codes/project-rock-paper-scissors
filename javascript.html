@@ -42,10 +42,11 @@ let computerScore = 0;
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-//func takes human and computer choices as args
+/*
+func takes human and computer choices as args
 function playRound(humanChoice, computerChoice) {
     
-    //if tied exits and no point scored
+    //if tied: exits and no point scored
     if (computerSelection === humanSelection) {
         console.log("Tie! Play Again!!!");
         return;
@@ -67,8 +68,57 @@ function playRound(humanChoice, computerChoice) {
 playRound(humanSelection, computerSelection);
 console.log(humanScore);
 console.log(computerScore);
+*/
 
-//plays single round
-//how do we determine the winner of each round?
-//increments the round winner's score 
-//logs winner
+
+//func loops or repeats the playRound function 5 times
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0; 
+
+    const totalRounds = 5;
+
+    for (let gameRound = 1; gameRound <= totalRounds; gameRound++) {
+
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        //func takes human and computer choices as args
+        function playRound(humanChoice, computerChoice) {
+    
+        //if tied: exits and no point scored
+        if (computerSelection === humanSelection) {
+            console.log("Tie!");
+            return;
+        }
+        //checks for computer win and logs score if yes
+        if (
+            (computerSelection === "paper" && humanSelection === "rock")  || 
+            (computerSelection === "rock" && humanSelection === "scissors") ||
+            (computerSelection === "scissors" && humanSelection === "paper")
+        )   {
+            console.log("computer wins");
+            computerScore++;
+        } else { 
+            console.log("You win!");
+            humanScore++;
+        }
+    }
+
+    playRound(humanSelection, computerSelection);
+    console.log(humanScore);
+    console.log(computerScore);
+
+    }
+    
+    //declares winner at the end
+    if(computerScore > humanScore) {
+        console.log("You lose, try again!")
+    } else if (computerScore === humanScore) {
+        console.log("Tie game, play again!")
+    } else {
+        console.log("Congratulations, you win!!!")
+    }
+}
+
+playGame();
